@@ -132,6 +132,25 @@ function mkenv() {
 	python3 -m venv ~/envs/$1
 }
 
+function mkproject() {
+	mkdir -p ./$1/docs
+	mkdir -p ./$1/tests
+	mkdir -p ./$1/$1
+	touch ./$1/$1/__init__.py
+	touch ./$1/tests/__init__.py
+	touch ./$1/README.md
+	touch ./$1/TODO.md
+	touch ./$1/.gitignore
+	touch ./$1/setup.py
+}
+
+
+
+function copydotfiles() {
+	cp ~/.bashrc ./
+	cp ~/.config/nvim/init.vim ./
+	cp ~/.tmux.conf ./
+}
 
 
 GOPATH=$HOME/go
